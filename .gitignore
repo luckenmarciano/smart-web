@@ -8,3 +8,6 @@ upload-hosting/
 
 # Pengaturan lokal Claude Code
 .claude/
+
+# Paket hasil deploy.ps1
+dist/
