@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PT Smart Teknologi Kreasi — Build Smart. Scale Fast.</title>
+<link rel="stylesheet" href="_ds/nocturne-89523c83-4cb1-4a96-8c7a-531d5bc17fb5/styles.css">
+<script src="_ds/nocturne-89523c83-4cb1-4a96-8c7a-531d5bc17fb5/_ds_bundle.js"></script>
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<style>
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:radial-gradient(1200px 720px at 82% -160px,color-mix(in srgb,var(--color-accent-900) 75%,transparent),transparent 60%),radial-gradient(1100px 800px at -10% 100%,color-mix(in srgb,black 30%,transparent),transparent 55%),var(--color-bg);text-wrap:pretty}
+a{color:var(--color-accent);text-decoration:none}
+a:hover{color:var(--color-accent-300)}
+.btn{white-space:nowrap;flex:none}
+body.stk-cursor,body.stk-cursor a,body.stk-cursor button{cursor:none}
+body.stk-cursor input,body.stk-cursor textarea{cursor:text}
+</style>
+</helmet>
+<div style="min-height:100vh;overflow-x:clip;color:var(--color-text);font-family:var(--font-body)">
+
+<header style="position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--color-bg) 78%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)">
+  <div style="max-width:1200px;margin:0 auto;padding:12px clamp(20px,5vw,72px);display:flex;align-items:center;gap:28px">
+    <a href="#top" style="color:var(--color-text);margin-right:auto;display:flex;align-items:center;gap:10px">
+      <img src="assets/logo.svg" alt="Logo PT Smart Teknologi Kreasi" style="width:30px;height:30px">
+      <span style="display:flex;flex-direction:column;font-family:var(--font-heading);font-weight:500;font-size:12px;line-height:1.15;letter-spacing:.08em">SMART<span>TEKNOLOGI KREASI</span></span>
+    </a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;gap:26px;font-size:14px">
+        <a href="#tentang" style="color:var(--color-text)" style-hover="color:var(--color-accent)">Tentang</a>
+        <a href="#layanan" style="color:var(--color-text)" style-hover="color:var(--color-accent)">Layanan</a>
+        <a href="#karya" style="color:var(--color-text)" style-hover="color:var(--color-accent)">Karya</a>
+        <a href="#proses" style="color:var(--color-text)" style-hover="color:var(--color-accent)">Proses</a>
+        <a href="#tim" style="color:var(--color-text)" style-hover="color:var(--color-accent)">Tim</a>
+        <a href="#faq" style="color:var(--color-text)" style-hover="color:var(--color-accent)">FAQ</a>
+        <a href="#kontak" class="btn btn-primary">Jadwalkan konsultasi</a>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button type="button" class="btn btn-secondary" onClick="{{ openMenu }}" aria-label="Buka menu" style="width:44px;height:44px;padding:0;font-size:20px"><i class="ph ph-list"></i></button>
+    </sc-if>
+  </div>
+  <div style="height:1px;background:linear-gradient(to right,transparent,var(--color-divider) 48px calc(100% - 48px),transparent)"></div>
+</header>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:70;background:var(--color-bg);padding:12px 20px 32px;display:flex;flex-direction:column">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <img src="assets/logo.svg" alt="Logo PT Smart Teknologi Kreasi" style="width:30px;height:30px">
+      <button type="button" class="btn btn-secondary" onClick="{{ closeMenu }}" aria-label="Tutup menu" style="width:44px;height:44px;padding:0;font-size:20px"><i class="ph ph-x"></i></button>
+    </div>
+    <nav onClick="{{ closeMenu }}" style="margin-top:auto;display:flex;flex-direction:column;gap:6px;font-family:var(--font-heading);font-weight:500;font-size:36px;letter-spacing:-0.02em;line-height:1.2">
+      <a href="#tentang" style="color:var(--color-text)">Tentang</a>
+      <a href="#layanan" style="color:var(--color-text)">Layanan</a>
+      <a href="#karya" style="color:var(--color-text)">Karya</a>
+      <a href="#proses" style="color:var(--color-text)">Proses</a>
+      <a href="#tim" style="color:var(--color-text)">Tim</a>
+      <a href="#faq" style="color:var(--color-text)">FAQ</a>
+      <a href="#kontak">Jadwalkan konsultasi →</a>
+    </nav>
+  </div>
+</sc-if>
+
+<section id="top" data-screen-label="Hero" style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) clamp(20px,5vw,72px) clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px clamp(24px,4vw,56px);align-items:center">
+  <div>
+    <h1 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(48px,7vw,96px);line-height:1.04;letter-spacing:-0.025em;margin:0 0 0 -0.06em">
+      <span style="display:block;overflow:hidden;padding-bottom:.08em"><span data-reveal="line" style="display:block">Build Smart.</span></span>
+      <span style="display:block;overflow:hidden;padding-bottom:.08em"><span data-reveal="line" data-delay="120" style="display:block;color:var(--color-accent)">Scale Fast.</span></span>
+    </h1>
+    <p data-reveal="1" data-delay="260" style="font-size:18px;line-height:28px;max-width:44ch;margin:28px 0 0;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Partner teknologi untuk perusahaan yang ingin membangun sistem yang tepat dan tumbuh tanpa hambatan.</p>
+    <div data-reveal="1" data-delay="360" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px">
+      <a href="#kontak" class="btn btn-primary" style="padding:12px 18px;font-size:15px">Jadwalkan konsultasi <i class="ph ph-arrow-right"></i></a>
+      <a href="#karya" class="btn btn-secondary" style="padding:12px 18px;font-size:15px;color:var(--color-text)">Lihat karya kami</a>
+    </div>
+    <div data-reveal="1" data-delay="440" style="display:flex;gap:18px;flex-wrap:wrap;margin-top:36px;font-size:13px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">
+      <span style="display:flex;align-items:center;gap:6px"><i class="ph ph-map-pin" style="color:var(--color-accent)"></i>Jakarta, Indonesia</span>
+      <span style="display:flex;align-items:center;gap:6px"><i class="ph ph-calendar-blank" style="color:var(--color-accent)"></i>Sejak 2020</span>
+    </div>
+  </div>
+  <div data-reveal="1" data-delay="200" style="position:relative">
+    <img data-parallax="0.06" src="assets/gladhy-saas.png" alt="Tampilan Gladhy SaaS di layar laptop" style="width:112%;max-width:none;margin-left:-4%;display:block">
+  </div>
+</section>
+
+<div aria-label="Teknologi yang kami gunakan" style="padding:8px 0 56px;overflow:hidden">
+  <div style="max-width:1200px;margin:0 auto 18px;padding:0 clamp(20px,5vw,72px);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent)">Teknologi yang kami gunakan</div>
+  <div ref="{{ trackRef }}" onMouseEnter="{{ pauseMarquee }}" onMouseLeave="{{ resumeMarquee }}" style="display:flex;width:max-content;will-change:transform;-webkit-mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent);mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent)">
+    <div style="display:flex;gap:56px;padding-right:56px;font-family:var(--font-heading);font-weight:500;font-size:clamp(22px,2.4vw,30px);letter-spacing:-0.01em;color:var(--color-neutral-500);white-space:nowrap">
+      <span>React</span><span>Next.js</span><span>Vue.js</span><span>NestJS</span><span>Node.js</span><span>Java Spring Boot</span><span>TypeScript</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span><span>Kubernetes</span><span>WhatsApp Cloud API</span>
+    </div>
+    <div aria-hidden="true" style="display:flex;gap:56px;padding-right:56px;font-family:var(--font-heading);font-weight:500;font-size:clamp(22px,2.4vw,30px);letter-spacing:-0.01em;color:var(--color-neutral-500);white-space:nowrap">
+      <span>React</span><span>Next.js</span><span>Vue.js</span><span>NestJS</span><span>Node.js</span><span>Java Spring Boot</span><span>TypeScript</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span><span>Kubernetes</span><span>WhatsApp Cloud API</span>
+    </div>
+  </div>
+</div>
+
+<section data-screen-label="Masalah" style="max-width:1200px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,5vw,72px) clamp(72px,9vw,112px)">
+  <h2 data-reveal="1" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(28px,3.6vw,44px);line-height:1.18;letter-spacing:-0.015em;margin:0 0 48px;max-width:26ch">Banyak bisnis sudah punya sistem. <span style="color:var(--color-neutral-500)">Yang sulit adalah punya sistem yang masih layak dipakai tiga tahun lagi.</span></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px">
+    <div data-reveal="1" class="card elev-sm" style="padding:24px;gap:12px;transition:box-shadow .35s,transform .35s" style-hover="box-shadow:var(--shadow-md);transform:translateY(-3px)"><i class="ph ph-lightning" style="font-size:24px;color:var(--color-accent)"></i><div class="card-title" style="font-size:19px">Dibangun terburu-buru</div><p class="card-body" style="font-size:15px;line-height:24px">Cepat jadi, tapi sulit ditambah fitur dan mahal diperbaiki.</p></div>
+    <div data-reveal="1" data-delay="80" class="card elev-sm" style="padding:24px;gap:12px;transition:box-shadow .35s,transform .35s" style-hover="box-shadow:var(--shadow-md);transform:translateY(-3px)"><i class="ph ph-ghost" style="font-size:24px;color:var(--color-accent)"></i><div class="card-title" style="font-size:19px">Vendor menghilang</div><p class="card-body" style="font-size:15px;line-height:24px">Setelah serah terima, tidak ada yang memahami sistemnya lagi.</p></div>
+    <div data-reveal="1" data-delay="160" class="card elev-sm" style="padding:24px;gap:12px;transition:box-shadow .35s,transform .35s" style-hover="box-shadow:var(--shadow-md);transform:translateY(-3px)"><i class="ph ph-files" style="font-size:24px;color:var(--color-accent)"></i><div class="card-title" style="font-size:19px">Data tercecer</div><p class="card-body" style="font-size:15px;line-height:24px">Informasi penting tersebar di Excel, chat, dan aplikasi terpisah.</p></div>
+  </div>
+</section>
+
+<section id="tentang" data-screen-label="Tentang" style="background:radial-gradient(900px 420px at 85% -40%,color-mix(in srgb,var(--color-section-glow) 70%,transparent),transparent 64%),var(--color-section)">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(20px,5vw,72px)">
+    <div data-reveal="1" style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-300)">Tentang kami</div>
+    <h2 data-reveal="1" data-delay="60" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(32px,4vw,48px);line-height:1.12;letter-spacing:-0.015em;margin:14px 0 20px;max-width:20ch">Lahir di tengah pandemi, tumbuh bersama klien</h2>
+    <p data-reveal="1" data-delay="120" style="font-size:17px;line-height:28px;margin:0;max-width:62ch;color:color-mix(in srgb,var(--color-text) 84%,transparent)">PT Smart Teknologi Kreasi berdiri pada 2020, saat banyak bisnis dipaksa pindah ke digital dalam semalam. Sejak itu kami membangun sistem rekrutmen, ERP pertambangan, platform komunikasi pelanggan, hingga produk SaaS kami sendiri — website, aplikasi, dan software untuk perusahaan menengah-besar dan startup.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:40px 28px;margin-top:56px">
+      <div data-reveal="1"><div data-count="2020" data-from="2000" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(40px,4vw,56px);line-height:1;font-variant-numeric:tabular-nums">2020</div><div style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-top:14px;color:color-mix(in srgb,var(--color-text) 64%,transparent)">Tahun berdiri</div></div>
+      <div data-reveal="1" data-delay="80"><div data-count="30" data-suffix="+" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(40px,4vw,56px);line-height:1;font-variant-numeric:tabular-nums">30+</div><div style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-top:14px;color:color-mix(in srgb,var(--color-text) 64%,transparent)">Proyek selesai tahun ini</div></div>
+      <div data-reveal="1" data-delay="160"><div data-count="500" data-suffix="+" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(40px,4vw,56px);line-height:1;font-variant-numeric:tabular-nums">500+</div><div style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-top:14px;color:color-mix(in srgb,var(--color-text) 64%,transparent)">Pengguna aktif Gladhy SaaS</div></div>
+      <div data-reveal="1" data-delay="240"><div data-count="8" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(40px,4vw,56px);line-height:1;font-variant-numeric:tabular-nums">8</div><div style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-top:14px;color:color-mix(in srgb,var(--color-text) 64%,transparent)">Orang dalam tim inti</div></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Visi Misi Nilai" style="max-width:1200px;margin:0 auto;padding:clamp(72px,9vw,112px) clamp(20px,5vw,72px) 0">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px clamp(24px,5vw,80px)">
+    <div>
+      <div data-reveal="1" style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent)">Visi</div>
+      <p data-reveal="1" data-delay="60" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(24px,2.6vw,32px);line-height:1.3;letter-spacing:-0.01em;margin:14px 0 0;max-width:24ch">Menjadi partner teknologi jangka panjang bagi perusahaan Indonesia yang ingin tumbuh secara digital.</p>
+    </div>
+    <div>
+      <div data-reveal="1" style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent)">Misi</div>
+      <div style="margin-top:6px">
+        <div data-reveal="1" style="display:grid;grid-template-columns:36px 1fr;gap:12px;padding:16px 0;background:linear-gradient(to right,transparent,var(--color-neutral-800) 48px calc(100% - 48px),transparent) no-repeat bottom / 100% 1px"><span style="color:var(--color-accent);font-variant-numeric:tabular-nums">01</span><div><div style="font-family:var(--font-heading);font-weight:500;font-size:18px">Membangun dengan tepat</div><div style="font-size:15px;line-height:24px;margin-top:4px;color:color-mix(in srgb,var(--color-text) 72%,transparent)">Solusi yang sesuai kebutuhan bisnis, bukan sekadar daftar fitur.</div></div></div>
+        <div data-reveal="1" data-delay="60" style="display:grid;grid-template-columns:36px 1fr;gap:12px;padding:16px 0;background:linear-gradient(to right,transparent,var(--color-neutral-800) 48px calc(100% - 48px),transparent) no-repeat bottom / 100% 1px"><span style="color:var(--color-accent);font-variant-numeric:tabular-nums">02</span><div><div style="font-family:var(--font-heading);font-weight:500;font-size:18px">Merawat setelah peluncuran</div><div style="font-size:15px;line-height:24px;margin-top:4px;color:color-mix(in srgb,var(--color-text) 72%,transparent)">Sistem dipantau, diperbaiki, dan dikembangkan seiring bisnis tumbuh.</div></div></div>
+        <div data-reveal="1" data-delay="120" style="display:grid;grid-template-columns:36px 1fr;gap:12px;padding:16px 0"><span style="color:var(--color-accent);font-variant-numeric:tabular-nums">03</span><div><div style="font-family:var(--font-heading);font-weight:500;font-size:18px">Memindahkan pengetahuan</div><div style="font-size:15px;line-height:24px;margin-top:4px;color:color-mix(in srgb,var(--color-text) 72%,transparent)">Dokumentasi dan pendampingan agar tim klien bisa mandiri.</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div data-reveal="1" style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent);margin-top:72px">Nilai yang kami pegang</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:28px;margin-top:24px">
+    <div data-reveal="1" style="display:flex;flex-direction:column;gap:10px"><i class="ph ph-cube" style="font-size:24px;color:var(--color-accent)"></i><div style="font-family:var(--font-heading);font-weight:500;font-size:18px">Dibangun untuk bertahan</div><div style="font-size:15px;line-height:24px;color:color-mix(in srgb,var(--color-text) 72%,transparent)">Kode dan arsitektur yang bisa dirawat oleh tim mana pun, bertahun-tahun.</div></div>
+    <div data-reveal="1" data-delay="60" style="display:flex;flex-direction:column;gap:10px"><i class="ph ph-target" style="font-size:24px;color:var(--color-accent)"></i><div style="font-family:var(--font-heading);font-weight:500;font-size:18px">Bertanggung jawab atas hasil</div><div style="font-size:15px;line-height:24px;color:color-mix(in srgb,var(--color-text) 72%,transparent)">Keberhasilan diukur dari dampak ke bisnis klien, bukan fitur yang selesai.</div></div>
+    <div data-reveal="1" data-delay="120" style="display:flex;flex-direction:column;gap:10px"><i class="ph ph-eye" style="font-size:24px;color:var(--color-accent)"></i><div style="font-family:var(--font-heading);font-weight:500;font-size:18px">Transparan</div><div style="font-size:15px;line-height:24px;color:color-mix(in srgb,var(--color-text) 72%,transparent)">Progres, kendala, dan biaya terbuka sejak hari pertama.</div></div>
+    <div data-reveal="1" data-delay="180" style="display:flex;flex-direction:column;gap:10px"><i class="ph ph-books" style="font-size:24px;color:var(--color-accent)"></i><div style="font-family:var(--font-heading);font-weight:500;font-size:18px">Terus belajar</div><div style="font-size:15px;line-height:24px;color:color-mix(in srgb,var(--color-text) 72%,transparent)">Setiap proyek dan produk menjadi bekal untuk proyek berikutnya.</div></div>
+  </div>
+</section>
+
+<section data-screen-label="Vendor vs Partner" style="max-width:1200px;margin:0 auto;padding:clamp(72px,9vw,112px) clamp(20px,5vw,72px)">
+  <div style="display:flex;flex-wrap:wrap;gap:32px clamp(24px,5vw,80px);align-items:flex-start">
+    <div style="flex:1 1 260px">
+      <h2 data-reveal="1" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(32px,4vw,48px);line-height:1.12;letter-spacing:-0.015em;margin:0 0 16px">Vendor atau partner?</h2>
+      <p data-reveal="1" data-delay="60" style="font-size:16px;line-height:26px;margin:0;max-width:34ch;color:color-mix(in srgb,var(--color-text) 74%,transparent)">Vendor selesai saat serah terima. Partner ikut memikirkan apa yang terjadi sesudahnya.</p>
+    </div>
+    <div data-reveal="1" data-delay="100" style="flex:2 1 520px;min-width:0;overflow-x:auto">
+      <table class="table" style="font-size:15px;min-width:560px">
+        <thead><tr><th style="padding:12px 8px">Aspek</th><th style="padding:12px 8px">Vendor pada umumnya</th><th style="padding:12px 8px;color:var(--color-accent)">Smart Teknologi Kreasi</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:16px 8px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Setelah serah terima</td><td style="padding:16px 8px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Proyek selesai, kontak berhenti</td><td style="padding:16px 8px"><span style="display:flex;gap:8px"><i class="ph ph-check" style="color:var(--color-accent);margin-top:3px"></i>Tetap mendampingi lewat pemeliharaan dan pengembangan</span></td></tr>
+          <tr><td style="padding:16px 8px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Ukuran keberhasilan</td><td style="padding:16px 8px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Fitur sesuai daftar</td><td style="padding:16px 8px"><span style="display:flex;gap:8px"><i class="ph ph-check" style="color:var(--color-accent);margin-top:3px"></i>Sistem dipakai dan berdampak ke bisnis</span></td></tr>
+          <tr><td style="padding:16px 8px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Kode &amp; dokumentasi</td><td style="padding:16px 8px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Sering tidak diserahkan</td><td style="padding:16px 8px"><span style="display:flex;gap:8px"><i class="ph ph-check" style="color:var(--color-accent);margin-top:3px"></i>Diserahkan lengkap ke klien</span></td></tr>
+          <tr><td style="padding:16px 8px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Komunikasi</td><td style="padding:16px 8px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Laporan di akhir proyek</td><td style="padding:16px 8px"><span style="display:flex;gap:8px"><i class="ph ph-check" style="color:var(--color-accent);margin-top:3px"></i>Demo progres setiap minggu</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="layanan" data-screen-label="Layanan" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px) clamp(72px,9vw,112px)">
+  <div style="height:1px;background:linear-gradient(to right,transparent,var(--color-divider) 48px calc(100% - 48px),transparent);margin-bottom:clamp(72px,9vw,112px)"></div>
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:36px">
+    <div>
+      <div data-reveal="1" style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent)">Dua pilar layanan</div>
+      <h2 data-reveal="1" data-delay="60" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(32px,4vw,48px);line-height:1.12;letter-spacing:-0.015em;margin:14px 0 0">{{ pillarTitle }}</h2>
+      <p data-reveal="1" data-delay="100" style="font-size:16px;line-height:26px;margin:12px 0 0;color:color-mix(in srgb,var(--color-text) 74%,transparent)">{{ pillarSub }}</p>
+    </div>
+    <div data-reveal="1" role="tablist" style="display:inline-flex;border:1px solid var(--color-divider);border-radius:var(--radius-md);overflow:hidden">
+      <sc-for list="{{ pillarTabs }}" as="p" hint-placeholder-count="2">
+        <button type="button" role="tab" aria-selected="{{ p.on }}" onClick="{{ p.pick }}" style="font:inherit;font-size:15px;padding:12px 22px;min-height:44px;border:0;cursor:pointer;background:{{ p.bg }};color:{{ p.fg }};box-shadow:{{ p.ring }};transition:background .25s,color .25s">{{ p.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px">
+    <sc-for list="{{ pillarItems }}" as="s" hint-placeholder-count="6">
+      <a href="#kontak" class="card elev-sm" style="padding:24px;gap:12px;min-height:200px;color:var(--color-text);transition:box-shadow .35s,transform .35s,background-color .35s" style-hover="box-shadow:var(--shadow-md);transform:translateY(-3px);background-color:color-mix(in srgb,var(--color-accent) 8%,var(--color-surface));color:var(--color-text)">
+        <div style="display:flex;justify-content:space-between;align-items:center"><i class="{{ s.icon }}" style="font-size:26px;color:var(--color-accent)"></i><i class="ph ph-arrow-up-right" style="color:var(--color-neutral-500)"></i></div>
+        <div class="card-title" style="font-size:19px;margin-top:auto">{{ s.title }}</div>
+        <p class="card-body" style="font-size:15px;line-height:24px;flex:none">{{ s.body }}</p>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<section id="karya" data-screen-label="Karya" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px) clamp(72px,9vw,112px)">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap">
+    <div>
+      <div data-reveal="1" style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent)">Perjalanan kami, 2020–2026</div>
+      <h2 data-reveal="1" data-delay="60" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(32px,4vw,48px);line-height:1.12;letter-spacing:-0.015em;margin:14px 0 0;max-width:22ch">Dari proyek klien ke produk sendiri</h2>
+    </div>
+    <div data-reveal="1" style="display:flex;gap:8px">
+      <button type="button" class="btn btn-secondary" onClick="{{ prevC }}" aria-label="Sebelumnya" style="width:44px;height:44px;padding:0;font-size:18px"><i class="ph ph-arrow-left"></i></button>
+      <button type="button" class="btn btn-secondary" onClick="{{ nextC }}" aria-label="Berikutnya" style="width:44px;height:44px;padding:0;font-size:18px"><i class="ph ph-arrow-right"></i></button>
+    </div>
+  </div>
+  <div data-reveal="1" style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-top:36px">
+    <sc-for list="{{ caseTabs }}" as="y" hint-placeholder-count="6">
+      <button type="button" onClick="{{ y.go }}" style="font:inherit;background:transparent;border:0;padding:0 8px 14px 0;text-align:left;cursor:pointer;color:{{ y.fg }};box-shadow:inset 0 -2px 0 {{ y.line }};transition:color .3s,box-shadow .3s;min-height:44px">
+        <div style="font-size:13px;font-variant-numeric:tabular-nums">{{ y.year }}</div>
+        <div style="font-family:var(--font-heading);font-weight:500;font-size:15px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ y.name }}</div>
+      </button>
+    </sc-for>
+  </div>
+  <div data-reveal="1" onMouseEnter="{{ holdC }}" onMouseLeave="{{ releaseC }}" style="overflow:hidden;margin-top:40px">
+    <div style="display:flex;transition:transform .8s cubic-bezier(.2,.7,.2,1);transform:translateX({{ cOffset }})">
+      <sc-for list="{{ cases }}" as="c" hint-placeholder-count="1">
+        <article style="flex:0 0 100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:32px clamp(24px,4vw,64px);align-items:center;padding-right:4px">
+          <img src="{{ c.img }}" alt="{{ c.alt }}" style="width:100%;display:block">
+          <div>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="tag tag-accent">{{ c.kind }}</span><span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 60%,transparent);font-variant-numeric:tabular-nums">{{ c.year }}</span></div>
+            <h3 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(28px,3vw,40px);letter-spacing:-0.015em;margin:14px 0 4px">{{ c.name }}</h3>
+            <div style="font-size:16px;color:var(--color-accent-300)">{{ c.tagline }}</div>
+            <div style="display:grid;gap:18px;margin-top:28px">
+              <div><div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 55%,transparent)">Masalah</div><p style="font-size:15.5px;line-height:25px;margin:6px 0 0;color:color-mix(in srgb,var(--color-text) 82%,transparent)">{{ c.problem }}</p></div>
+              <div><div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 55%,transparent)">Solusi</div><p style="font-size:15.5px;line-height:25px;margin:6px 0 0;color:color-mix(in srgb,var(--color-text) 82%,transparent)">{{ c.solution }}</p></div>
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:24px">
+              <sc-for list="{{ c.stack }}" as="t" hint-placeholder-count="4"><span class="tag tag-outline">{{ t }}</span></sc-for>
+            </div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+  <p style="font-size:12px;margin:20px 0 0;color:color-mix(in srgb,var(--color-text) 50%,transparent)">Tampilan antarmuka dengan data contoh.</p>
+  <figure data-reveal="1" style="margin:72px 0 0">
+    <blockquote style="font-family:var(--font-heading);font-weight:500;font-size:clamp(24px,2.8vw,36px);line-height:1.35;letter-spacing:-0.01em;max-width:36ch;margin:0">“Tiga proyek klien mengajari kami membangun. Tiga produk sendiri membuktikan kami bisa menskalakan.”</blockquote>
+  </figure>
+</section>
+
+<section id="proses" data-screen-label="Proses" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px) clamp(72px,9vw,112px)">
+  <div style="height:1px;background:linear-gradient(to right,transparent,var(--color-divider) 48px calc(100% - 48px),transparent);margin-bottom:clamp(72px,9vw,112px)"></div>
+  <div data-reveal="1" style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent)">Cara kami bekerja</div>
+  <h2 data-reveal="1" data-delay="60" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(32px,4vw,48px);line-height:1.12;letter-spacing:-0.015em;margin:14px 0 12px;max-width:22ch">Enam tahap, masing-masing dengan hasil yang jelas</h2>
+  <p data-reveal="1" data-delay="100" style="font-size:16px;line-height:26px;margin:0 0 48px;color:color-mix(in srgb,var(--color-text) 74%,transparent)">Anda melihat progres nyata setiap minggu, bukan hanya di akhir proyek.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:36px 28px">
+    <sc-for list="{{ steps }}" as="p" hint-placeholder-count="6">
+      <div data-reveal="1" style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:12px"><span style="font-size:15px;color:var(--color-accent);font-variant-numeric:tabular-nums">{{ p.num }}</span><span style="width:44px;height:1px;background:var(--color-accent)"></span></div>
+        <h3 style="font-family:var(--font-heading);font-weight:500;font-size:22px;line-height:1.25;margin:0">{{ p.title }}</h3>
+        <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 55%,transparent)">Anda menerima</div>
+        <div style="font-size:15.5px;line-height:24px;display:flex;gap:8px"><i class="ph ph-package" style="color:var(--color-accent-300);margin-top:3px"></i>{{ p.body }}</div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="Mengapa kami" style="background:radial-gradient(900px 420px at 85% -40%,color-mix(in srgb,var(--color-section-glow) 70%,transparent),transparent 64%),var(--color-section)">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(20px,5vw,72px)">
+    <h2 data-reveal="1" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(32px,4vw,48px);line-height:1.12;letter-spacing:-0.015em;margin:0 0 48px">Mengapa memilih kami</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:36px 28px">
+      <div data-reveal="1" style="display:flex;flex-direction:column;gap:10px"><i class="ph ph-compass" style="font-size:26px;color:var(--color-accent-300)"></i><div style="font-family:var(--font-heading);font-weight:500;font-size:19px">Pengalaman lintas bidang</div><div style="font-size:15px;line-height:24px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Rekrutmen, pertambangan, layanan pelanggan, dan pelatihan korporat.</div></div>
+      <div data-reveal="1" data-delay="60" style="display:flex;flex-direction:column;gap:10px"><i class="ph ph-trend-up" style="font-size:26px;color:var(--color-accent-300)"></i><div style="font-family:var(--font-heading);font-weight:500;font-size:19px">Terbiasa dengan skala</div><div style="font-size:15px;line-height:24px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Kami menjalankan platform SaaS sendiri dengan 500+ pengguna aktif.</div></div>
+      <div data-reveal="1" data-delay="120" style="display:flex;flex-direction:column;gap:10px"><i class="ph ph-coins" style="font-size:26px;color:var(--color-accent-300)"></i><div style="font-family:var(--font-heading);font-weight:500;font-size:19px">Paham biaya jangka panjang</div><div style="font-size:15px;line-height:24px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Sebagai pemilik produk, kami merasakan sendiri biaya server, perawatan, dan dukungan.</div></div>
+      <div data-reveal="1" data-delay="180" style="display:flex;flex-direction:column;gap:10px"><i class="ph ph-handshake" style="font-size:26px;color:var(--color-accent-300)"></i><div style="font-family:var(--font-heading);font-weight:500;font-size:19px">Mendampingi setelah rilis</div><div style="font-size:15px;line-height:24px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Pemeliharaan dan pengembangan lanjutan adalah bagian dari layanan, bukan tambahan.</div></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Model kerja sama" style="max-width:1200px;margin:0 auto;padding:clamp(72px,9vw,112px) clamp(20px,5vw,72px)">
+  <div data-reveal="1" style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent)">Model kerja sama</div>
+  <h2 data-reveal="1" data-delay="60" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(32px,4vw,48px);line-height:1.12;letter-spacing:-0.015em;margin:14px 0 12px">Pilih sesuai tahap dan kebutuhan Anda</h2>
+  <p data-reveal="1" data-delay="100" style="font-size:16px;line-height:26px;margin:0 0 40px;color:color-mix(in srgb,var(--color-text) 74%,transparent)">Model bisa berganti seiring proyek berjalan.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+    <sc-for list="{{ models }}" as="m" hint-placeholder-count="3">
+      <div data-reveal="1" class="card elev-sm" style="padding:28px;gap:20px;transition:box-shadow .35s,transform .35s" style-hover="box-shadow:var(--shadow-md);transform:translateY(-3px)">
+        <i class="{{ m.icon }}" style="font-size:26px;color:var(--color-accent)"></i>
+        <div class="card-title" style="font-size:21px">{{ m.title }}</div>
+        <div><div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 55%,transparent)">Cocok untuk</div><p style="font-size:15px;line-height:24px;margin:6px 0 0;color:color-mix(in srgb,var(--color-text) 82%,transparent)">{{ m.fit }}</p></div>
+        <div style="height:1px;background:linear-gradient(to right,var(--color-neutral-800),transparent)"></div>
+        <div><div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 55%,transparent)">Cara biaya dihitung</div><p style="font-size:15px;line-height:24px;margin:6px 0 0;color:color-mix(in srgb,var(--color-text) 82%,transparent)">{{ m.cost }}</p></div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="tim" data-screen-label="Tim" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px) clamp(72px,9vw,112px)">
+  <div data-reveal="1" style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent)">Tim inti</div>
+  <h2 data-reveal="1" data-delay="60" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(32px,4vw,48px);line-height:1.12;letter-spacing:-0.015em;margin:14px 0 12px;max-width:24ch">Delapan orang yang merancang, membangun, dan merawat setiap proyek</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;margin-top:40px">
+    <sc-for list="{{ team }}" as="m" hint-placeholder-count="8">
+      <div data-reveal="1" style="display:flex;align-items:center;gap:14px;padding:14px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);transition:background-color .3s,box-shadow .3s" style-hover="background-color:var(--color-surface);box-shadow:var(--shadow-md)">
+        <span style="width:48px;height:48px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--color-accent-800);color:var(--color-accent-200);font-family:var(--font-heading);font-weight:500;font-size:15px;letter-spacing:.02em">{{ m.ini }}</span>
+        <div style="min-width:0"><div style="font-family:var(--font-heading);font-weight:500;font-size:16px">{{ m.name }}</div><div style="font-size:13px;margin-top:2px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">{{ m.role }}</div></div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="faq" data-screen-label="FAQ" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px) clamp(72px,9vw,112px);display:flex;flex-wrap:wrap;gap:32px clamp(24px,5vw,80px);align-items:flex-start">
+  <div style="position:sticky;top:96px;flex:1 1 280px">
+    <div data-reveal="1" style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent)">FAQ</div>
+    <h2 data-reveal="1" data-delay="60" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(32px,4vw,48px);line-height:1.12;letter-spacing:-0.015em;margin:14px 0 16px">Pertanyaan umum</h2>
+    <p data-reveal="1" data-delay="120" style="font-size:15.5px;line-height:26px;margin:0;max-width:36ch;color:color-mix(in srgb,var(--color-text) 74%,transparent)">Belum terjawab? <a href="#kontak">Ceritakan kebutuhan Anda</a> — kami bantu petakan solusinya.</p>
+  </div>
+  <div data-reveal="1" style="flex:2 1 460px;min-width:0">
+    <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+      <div style="background:linear-gradient(to right,transparent,var(--color-neutral-800) 48px calc(100% - 48px),transparent) no-repeat bottom / 100% 1px">
+        <button type="button" onClick="{{ f.toggle }}" aria-expanded="{{ f.open }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;background:transparent;border:0;color:var(--color-text);text-align:left;font-family:var(--font-heading);font-weight:500;font-size:18px;line-height:1.35;cursor:pointer" style-hover="color:var(--color-accent-300)">
+          <span>{{ f.q }}</span>
+          <i class="ph ph-plus" style="flex:none;color:var(--color-accent);font-size:18px;transition:transform .35s ease;transform:rotate({{ f.rot }})"></i>
+        </button>
+        <div style="display:grid;grid-template-rows:{{ f.rows }};transition:grid-template-rows .4s ease">
+          <div style="overflow:hidden"><p style="font-size:15.5px;line-height:26px;margin:0 0 22px;max-width:62ch;color:color-mix(in srgb,var(--color-text) 76%,transparent)">{{ f.a }}</p></div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="kontak" data-screen-label="Kontak" style="background:radial-gradient(900px 420px at 85% -40%,color-mix(in srgb,var(--color-section-glow) 70%,transparent),transparent 64%),var(--color-section)">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(72px,9vw,112px) clamp(20px,5vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px clamp(24px,5vw,80px);align-items:start">
+    <div>
+      <h2 data-reveal="1" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(36px,5vw,64px);line-height:1.08;letter-spacing:-0.02em;margin:0">Mari bicarakan proyek Anda.</h2>
+      <p data-reveal="1" data-delay="80" style="font-size:17px;line-height:28px;margin:24px 0 0;max-width:44ch;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Ceritakan kebutuhan Anda. Kami bantu memetakan solusi, tahapan, dan perkiraan biayanya.</p>
+      <div data-reveal="1" data-delay="140" style="display:grid;gap:18px;margin-top:36px;font-size:15px;line-height:23px">
+        <div style="display:grid;grid-template-columns:24px 1fr;gap:10px"><i class="ph ph-map-pin" style="color:var(--color-accent-300);margin-top:3px"></i><span>Gedung Kreasi Digital Lt. 3, Jl. Teknologi Raya No. 88, Kebayoran Baru, Jakarta Selatan 12180</span></div>
+        <div style="display:grid;grid-template-columns:24px 1fr;gap:10px"><i class="ph ph-phone" style="color:var(--color-accent-300);margin-top:3px"></i><span><a href="tel:+622150882020" style="color:var(--color-text)">+62 21 5088 2020</a> · <a href="https://wa.me/6281220208800" style="color:var(--color-text)">WA +62 812-2020-8800</a></span></div>
+        <div style="display:grid;grid-template-columns:24px 1fr;gap:10px"><i class="ph ph-envelope-simple" style="color:var(--color-accent-300);margin-top:3px"></i><a href="mailto:halo@smartteknologikreasi.co.id" style="color:var(--color-text)">halo@smartteknologikreasi.co.id</a></div>
+      </div>
+    </div>
+    <div data-reveal="1" data-delay="120" style="background:color-mix(in srgb,var(--color-bg) 70%,transparent);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:clamp(20px,3vw,32px)">
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:12px;padding:24px 0">
+          <i class="ph ph-check-circle" style="font-size:36px;color:var(--color-accent)"></i>
+          <div style="font-family:var(--font-heading);font-weight:500;font-size:24px">Terima kasih, {{ sentName }}.</div>
+          <p style="margin:0;font-size:15px;line-height:25px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Permintaan konsultasi Anda sudah kami terima. Tim kami akan menghubungi Anda untuk menjadwalkan sesi.</p>
+          <button type="button" class="btn btn-ghost" onClick="{{ resetForm }}" style="align-self:flex-start;margin-top:8px">Kirim pesan lain</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" noValidate="{{ true }}" style="display:flex;flex-direction:column;gap:16px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:16px">
+            <div class="field"><label for="f-name">Nama</label><input id="f-name" name="name" class="input" autocomplete="name" style="min-height:44px"><div style="font-size:12px;margin-top:6px;color:var(--color-accent-300)">{{ errName }}</div></div>
+            <div class="field"><label for="f-company">Perusahaan</label><input id="f-company" name="company" class="input" autocomplete="organization" style="min-height:44px"></div>
+          </div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" class="input" autocomplete="email" style="min-height:44px"><div style="font-size:12px;margin-top:6px;color:var(--color-accent-300)">{{ errEmail }}</div></div>
+          <div class="field">
+            <label>Kebutuhan</label>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ needs }}" as="n" hint-placeholder-count="5">
+                <button type="button" onClick="{{ n.toggle }}" aria-pressed="{{ n.on }}" style="font:inherit;font-size:13px;padding:8px 14px;min-height:36px;border-radius:999px;cursor:pointer;background:{{ n.bg }};color:{{ n.fg }};border:1px solid {{ n.bd }};transition:background .25s,color .25s,border-color .25s">{{ n.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <div class="field"><label for="f-msg">Ceritakan kebutuhan Anda</label><textarea id="f-msg" name="message" class="input" rows="4"></textarea><div style="font-size:12px;margin-top:6px;color:var(--color-accent-300)">{{ errMsg }}</div></div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;padding:12px 18px;font-size:15px;min-height:44px">Jadwalkan sesi konsultasi <i class="ph ph-paper-plane-right"></i></button>
+        </form>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<footer style="max-width:1200px;margin:0 auto;padding:40px clamp(20px,5vw,72px);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">
+  <span style="display:flex;align-items:center;gap:10px"><img src="assets/logo.svg" alt="" style="width:22px;height:22px">© 2026 PT Smart Teknologi Kreasi · Build Smart. Scale Fast.</span>
+  <div style="display:flex;gap:20px">
+    <a href="#layanan" style="color:inherit" style-hover="color:var(--color-accent)">Layanan</a>
+    <a href="#karya" style="color:inherit" style-hover="color:var(--color-accent)">Karya</a>
+    <a href="#top" style="color:inherit" style-hover="color:var(--color-accent)">Kembali ke atas ↑</a>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;customCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Animasi&quot;},&quot;marqueeSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:40,&quot;min&quot;:10,&quot;max&quot;:120,&quot;step&quot;:5,&quot;unit&quot;:&quot;px/s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Animasi&quot;},&quot;revealDistance&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:14,&quot;min&quot;:0,&quot;max&quot;:48,&quot;step&quot;:2,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Animasi&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1200, menuOpen: false, pillar: 'build', c: 0, faq: 0, sent: false, sentName: '', errs: {}, needs: {} };
+  trackRef = React.createRef();
+
+  componentDidMount() {
+    this.reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    addEventListener('resize', this.onResize);
+    this.setupReveal(); this.setupParallax(); this.setupMarquee(); this.setupCursor();
+    this.timer = setInterval(() => { if (!this.holdCase) this.goC(this.state.c + 1); }, 7000);
+  }
+  componentWillUnmount() {
+    removeEventListener('resize', this.onResize);
+    removeEventListener('scroll', this.onScroll);
+    this.io && this.io.disconnect();
+    cancelAnimationFrame(this.mRaf); cancelAnimationFrame(this.cRaf);
+    clearInterval(this.timer);
+    this.cleanCursor && this.cleanCursor();
+  }
+
+  setupReveal() {
+    if (this.reduce) return;
+    const dist = this.props.revealDistance ?? 14;
+    const els = [...document.querySelectorAll('[data-reveal]')];
+    const map = new Map();
+    const show = el => {
+      requestAnimationFrame(() => requestAnimationFrame(() => { el.style.opacity = '1'; el.style.transform = 'none'; }));
+      el.querySelectorAll('[data-count]').forEach(c => this.count(c, +(el.dataset.delay || 0)));
+    };
+    els.forEach(el => {
+      const line = el.dataset.reveal === 'line';
+      el.style.opacity = line ? '1' : '0';
+      el.style.transform = line ? 'translateY(105%)' : `translateY(${dist}px)`;
+      el.style.transition = `opacity .9s cubic-bezier(.2,.7,.2,1), transform ${line ? 1.1 : .9}s cubic-bezier(.2,.7,.2,1)`;
+      el.style.transitionDelay = (el.dataset.delay || 0) + 'ms';
+    });
+    this.io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = map.get(e.target); if (el) show(el);
+      this.io.unobserve(e.target);
+    }), { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+    els.forEach(el => {
+      const target = el.dataset.reveal === 'line' ? el.parentElement : el;
+      if (target.getBoundingClientRect().top < innerHeight * 0.95) return show(el);
+      map.set(target, el); this.io.observe(target);
+    });
+  }
+  count(el, delay) {
+    const end = +el.dataset.count, from = +(el.dataset.from || 0), suf = el.dataset.suffix || '', dur = 1600;
+    el.textContent = from + suf;
+    setTimeout(() => {
+      const t0 = performance.now();
+      const step = now => {
+        const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(from + (end - from) * e) + suf;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }, delay + 200);
+  }
+  setupParallax() {
+    if (this.reduce) return;
+    let ticking = false;
+    this.onScroll = () => {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(() => {
+        const vh = innerHeight;
+        document.querySelectorAll('[data-parallax]').forEach(el => {
+          const r = el.parentElement.getBoundingClientRect();
+          if (r.bottom < 0 || r.top > vh) return;
+          el.style.translate = `0 ${((r.top + r.height / 2 - vh / 2) * -(+el.dataset.parallax)).toFixed(1)}px`;
+        });
+        ticking = false;
+      });
+    };
+    addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+  setupMarquee() {
+    let x = 0, last = performance.now();
+    const loop = now => {
+      const dt = Math.min(64, now - last); last = now;
+      const el = this.trackRef.current;
+      if (el && !this.reduce) {
+        x -= (this.props.marqueeSpeed ?? 40) * (this.mPaused ? 0.15 : 1) * dt / 1000;
+        const half = el.scrollWidth / 2;
+        if (half && -x >= half) x += half;
+        el.style.transform = `translate3d(${x}px,0,0)`;
+      }
+      this.mRaf = requestAnimationFrame(loop);
+    };
+    this.mRaf = requestAnimationFrame(loop);
+  }
+  setupCursor() {
+    if ((this.props.customCursor ?? true) === false || !matchMedia('(pointer: fine)').matches || this.reduce) return;
+    const mk = css => { const d = document.createElement('div'); d.setAttribute('aria-hidden', 'true'); d.style.cssText = 'position:fixed;left:0;top:0;pointer-events:none;z-index:9999;border-radius:50%;opacity:0;transition:opacity .3s,width .3s,height .3s,margin .3s,background-color .3s;' + css; document.body.appendChild(d); return d; };
+    const dot = mk('width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--color-accent)');
+    const ring = mk('width:32px;height:32px;margin:-16px 0 0 -16px;border:1px solid color-mix(in srgb,var(--color-accent) 70%,transparent)');
+    document.body.classList.add('stk-cursor');
+    let tx = -100, ty = -100, rx = -100, ry = -100;
+    const move = e => { tx = e.clientX; ty = e.clientY; dot.style.opacity = ring.style.opacity = '1'; };
+    const over = e => {
+      const hot = e.target.closest && e.target.closest('a,button');
+      const txt = e.target.closest && e.target.closest('input,textarea');
+      ring.style.width = ring.style.height = hot ? '52px' : '32px';
+      ring.style.margin = hot ? '-26px 0 0 -26px' : '-16px 0 0 -16px';
+      ring.style.backgroundColor = hot ? 'color-mix(in srgb,var(--color-accent) 12%,transparent)' : 'transparent';
+      dot.style.opacity = ring.style.opacity = txt ? '0' : '1';
+    };
+    const leave = () => { dot.style.opacity = ring.style.opacity = '0'; };
+    addEventListener('mousemove', move); addEventListener('mouseover', over); document.addEventListener('mouseleave', leave);
+    const loop = () => {
+      rx += (tx - rx) * 0.18; ry += (ty - ry) * 0.18;
+      dot.style.transform = `translate3d(${tx}px,${ty}px,0)`;
+      ring.style.transform = `translate3d(${rx}px,${ry}px,0)`;
+      this.cRaf = requestAnimationFrame(loop);
+    };
+    loop();
+    this.cleanCursor = () => { removeEventListener('mousemove', move); removeEventListener('mouseover', over); document.removeEventListener('mouseleave', leave); dot.remove(); ring.remove(); document.body.classList.remove('stk-cursor'); };
+  }
+
+  goC(i) { const n = this.cases.length; this.setState({ c: ((i % n) + n) % n }); }
+
+  pillars = {
+    build: { label: 'Build', title: 'Membangun sistem yang tepat sejak awal.', sub: 'Untuk kebutuhan yang baru dimulai atau belum punya sistem.', items: [
+      { icon: 'ph ph-browser', title: 'Website & landing page', body: 'Company profile, kampanye, dan e-commerce yang cepat dan mudah dikelola.' },
+      { icon: 'ph ph-squares-four', title: 'Web app & sistem internal', body: 'Dashboard, portal karyawan, dan sistem operasional sesuai alur kerja Anda.' },
+      { icon: 'ph ph-desktop', title: 'Aplikasi desktop', body: 'Aplikasi Windows dan macOS untuk kebutuhan yang tidak cocok di browser.' },
+      { icon: 'ph ph-pen-nib', title: 'Desain UI/UX', body: 'Riset pengguna, wireframe, dan prototipe yang diuji sebelum dibangun.' },
+      { icon: 'ph ph-plugs-connected', title: 'Integrasi & API', body: 'Menghubungkan sistem dengan pembayaran, WhatsApp, ERP, dan layanan lain.' },
+      { icon: 'ph ph-rocket-launch', title: 'Pengembangan MVP', body: 'Versi pertama produk startup yang siap diuji ke pasar.' } ] },
+    scale: { label: 'Scale', title: 'Membuat sistem siap tumbuh bersama bisnis.', sub: 'Untuk sistem yang sudah berjalan dan perlu tumbuh.', items: [
+      { icon: 'ph ph-gauge', title: 'Audit & optimasi', body: 'Menemukan penyebab sistem lambat atau sering bermasalah, lalu memperbaikinya.' },
+      { icon: 'ph ph-buildings', title: 'Arsitektur multi-tenant', body: 'Mengubah aplikasi satu klien menjadi platform untuk banyak pelanggan.' },
+      { icon: 'ph ph-cloud-arrow-up', title: 'Cloud & DevOps', body: 'Migrasi ke cloud, CI/CD, dan infrastruktur yang bisa bertambah otomatis.' },
+      { icon: 'ph ph-shield-check', title: 'Keamanan & kepatuhan', body: 'Pengamanan data dan penyesuaian dengan UU Pelindungan Data Pribadi.' },
+      { icon: 'ph ph-wrench', title: 'Pemeliharaan dengan SLA', body: 'Pemantauan, perbaikan, dan pembaruan rutin dengan waktu respons yang disepakati.' },
+      { icon: 'ph ph-chart-line-up', title: 'Pengembangan lanjutan', body: 'Fitur baru diprioritaskan dari data pemakaian, bukan tebakan.' } ] }
+  };
+  cases = [
+    { year: '2020', kind: 'Proyek klien', name: 'Psikora', tagline: 'Psikotes daring untuk rekrutmen', img: 'assets/psikora.png', problem: 'Pandemi menghentikan psikotes tatap muka, padahal rekrutmen harus tetap berjalan.', solution: 'Psikotes daring dengan pengawasan webcam, penilaian otomatis, dan laporan PDF per kandidat.', stack: ['Java Spring Boot', 'Vue.js', 'MySQL', 'WebRTC'] },
+    { year: '2022', kind: 'Proyek klien', name: 'AurumOps ERP', tagline: 'ERP perusahaan tambang emas', img: 'assets/aurumops.png', problem: 'Data produksi, gudang, dan alat berat tersebar di Excel antara kantor pusat dan site tambang.', solution: 'ERP modular dari produksi sampai pengadaan yang tetap jalan offline di site dan tersinkron otomatis.', stack: ['React', 'NestJS', 'PostgreSQL', 'Docker'] },
+    { year: '2023', kind: 'Proyek klien', name: 'SapaBot', tagline: 'Broadcast dan chatbot WhatsApp', img: 'assets/sapabot.png', problem: 'Tim CS kewalahan membalas chat berulang, sementara broadcast masih dikirim manual.', solution: 'Broadcast tersegmentasi, chatbot tanpa coding, dan inbox bersama di atas WhatsApp Business Platform resmi.', stack: ['Node.js', 'WhatsApp Cloud API', 'Redis', 'React'] },
+    { year: '2024', kind: 'Produk kami', name: 'Typeflow', tagline: 'Form builder percakapan', img: 'assets/typeflow.png', problem: 'Form builder luar negeri dibayar dalam dolar dan menyimpan data di luar Indonesia.', solution: 'Satu pertanyaan per layar dengan logika lompat, integrasi WhatsApp dan Sheets, data di server lokal.', stack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma'] },
+    { year: '2025', kind: 'Produk kami', name: 'Gladhy LMS', tagline: 'Platform pelatihan karyawan', img: 'assets/gladhy-lms.png', problem: 'Pelatihan karyawan masih tatap muka, mahal, dan progresnya sulit diukur.', solution: 'Kursus, kuis, sertifikat otomatis, learning path per jabatan, dan laporan kepatuhan pelatihan wajib.', stack: ['Next.js', 'NestJS', 'PostgreSQL', 'Streaming HLS'] },
+    { year: '2026', kind: 'Produk kami · 500+ pengguna aktif', name: 'Gladhy SaaS', tagline: 'Gladhy menjadi platform SaaS', img: 'assets/gladhy-saas.png', problem: 'Setiap klien baru butuh instalasi sendiri, sehingga onboarding lambat dan update dilakukan satu per satu.', solution: 'Multi-tenant dengan domain dan branding per perusahaan, langganan otomatis, dan pendaftaran mandiri.', stack: ['Kubernetes', 'PostgreSQL RLS', 'Redis', 'CI/CD'] }
+  ].map(c => ({ ...c, alt: 'Tampilan ' + c.name + ' di layar laptop' }));
+  steps = [
+    { num: '01', title: 'Discovery', body: 'Dokumen kebutuhan dan estimasi' },
+    { num: '02', title: 'Desain', body: 'Prototipe yang bisa dicoba' },
+    { num: '03', title: 'Development', body: 'Demo progres setiap minggu' },
+    { num: '04', title: 'Testing', body: 'Laporan uji dan perbaikan' },
+    { num: '05', title: 'Peluncuran', body: 'Sistem live dan serah terima' },
+    { num: '06', title: 'Dukungan', body: 'Laporan pemeliharaan bulanan' }
+  ];
+  models = [
+    { icon: 'ph ph-file-text', title: 'Proyek lingkup tetap', fit: 'Website atau aplikasi dengan kebutuhan yang sudah jelas.', cost: 'Satu nilai kontrak, dibayar per tahapan.' },
+    { icon: 'ph ph-users-three', title: 'Tim khusus', fit: 'Produk yang terus berkembang dan kebutuhannya sering berubah.', cost: 'Per bulan, sesuai komposisi tim yang dipakai.' },
+    { icon: 'ph ph-lifebuoy', title: 'Retainer pemeliharaan', fit: 'Sistem yang sudah berjalan dan perlu dijaga tetap sehat.', cost: 'Per bulan, dengan SLA waktu respons.' }
+  ];
+  team = [
+    { ini: 'AP', name: 'Andhika Pratama', role: 'Founder & CEO' },
+    { ini: 'RW', name: 'Rani Wulandari', role: 'Co-founder & CTO' },
+    { ini: 'BS', name: 'Bayu Setiawan', role: 'Project Manager' },
+    { ini: 'DN', name: 'Dimas Nugroho', role: 'Lead Backend Engineer' },
+    { ini: 'SA', name: 'Sekar Ayu Lestari', role: 'Frontend Engineer' },
+    { ini: 'FR', name: 'Fajar Ramadhan', role: 'Fullstack Engineer' },
+    { ini: 'TA', name: 'Tiara Anindya', role: 'UI/UX Designer' },
+    { ini: 'RM', name: 'Reza Mahendra', role: 'DevOps & QA Engineer' }
+  ];
+  faqList = [
+    { q: 'Apa beda layanan Build dan Scale?', a: 'Build untuk kebutuhan yang baru dimulai atau belum punya sistem — website, web app, aplikasi desktop, UI/UX, integrasi, dan MVP. Scale untuk sistem yang sudah berjalan dan perlu tumbuh — audit, multi-tenant, cloud & DevOps, keamanan, dan pemeliharaan dengan SLA.' },
+    { q: 'Bagaimana saya memantau progres proyek?', a: 'Setiap tahap punya hasil yang jelas untuk Anda, dan selama development kami mengadakan demo progres setiap minggu — bukan hanya laporan di akhir proyek.' },
+    { q: 'Apakah kode dan dokumentasi diserahkan ke kami?', a: 'Ya. Kode dan dokumentasi diserahkan lengkap ke klien, disertai pendampingan agar tim Anda bisa mandiri.' },
+    { q: 'Apa yang terjadi setelah sistem diluncurkan?', a: 'Kami tetap mendampingi lewat pemeliharaan dan pengembangan lanjutan, dengan laporan pemeliharaan bulanan. Untuk sistem yang sudah berjalan, tersedia retainer dengan SLA waktu respons.' },
+    { q: 'Model biaya apa saja yang tersedia?', a: 'Proyek lingkup tetap (satu nilai kontrak, dibayar per tahapan), tim khusus (per bulan sesuai komposisi tim), dan retainer pemeliharaan (per bulan dengan SLA). Model bisa berganti seiring proyek berjalan.' },
+    { q: 'Apakah data kami aman dan sesuai regulasi?', a: 'Layanan keamanan & kepatuhan kami mencakup pengamanan data dan penyesuaian dengan UU Pelindungan Data Pribadi.' }
+  ];
+  needList = ['Website', 'Web app / sistem internal', 'Aplikasi desktop', 'UI/UX', 'Integrasi & API', 'Scale / optimasi', 'Pemeliharaan'];
+
+  submit = e => {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const name = (fd.get('name') || '').trim(), email = (fd.get('email') || '').trim(), msg = (fd.get('message') || '').trim();
+    const errs = {};
+    if (!name) errs.name = 'Nama wajib diisi.';
+    if (!/^\S+@\S+\.\S+$/.test(email)) errs.email = 'Masukkan email yang valid.';
+    if (msg.length < 10) errs.msg = 'Ceritakan sedikit lebih detail (min. 10 karakter).';
+    if (Object.keys(errs).length) return this.setState({ errs });
+    this.setState({ sent: true, sentName: name.split(' ')[0], errs: {}, needs: {} });
+  };
+
+  renderVals() {
+    const s = this.state, wide = s.w >= 980, P = this.pillars[s.pillar];
+    return {
+      wide, narrow: !wide, menuOpen: s.menuOpen && !wide,
+      openMenu: () => this.setState({ menuOpen: true }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      trackRef: this.trackRef,
+      pauseMarquee: () => { this.mPaused = true; }, resumeMarquee: () => { this.mPaused = false; },
+      pillarTitle: P.title, pillarSub: P.sub, pillarItems: P.items,
+      pillarTabs: Object.entries(this.pillars).map(([k, v]) => { const on = s.pillar === k; return { label: v.label, on, pick: () => this.setState({ pillar: k }), bg: on ? 'color-mix(in srgb,var(--color-accent) 14%,transparent)' : 'transparent', fg: on ? 'var(--color-accent-200)' : 'var(--color-text)', ring: on ? 'inset 0 0 0 1px var(--color-accent)' : 'none' }; }),
+      cases: this.cases, cOffset: `-${s.c * 100}%`,
+      prevC: () => this.goC(s.c - 1), nextC: () => this.goC(s.c + 1),
+      holdC: () => { this.holdCase = true; }, releaseC: () => { this.holdCase = false; },
+      caseTabs: this.cases.map((c, i) => ({ year: c.year, name: c.name, go: () => this.goC(i), fg: i === s.c ? 'var(--color-text)' : 'var(--color-neutral-500)', line: i === s.c ? 'var(--color-accent)' : 'var(--color-neutral-800)' })),
+      steps: this.steps, models: this.models, team: this.team,
+      faqs: this.faqList.map((f, i) => ({ ...f, open: s.faq === i, rot: s.faq === i ? '45deg' : '0deg', rows: s.faq === i ? '1fr' : '0fr', toggle: () => this.setState({ faq: s.faq === i ? -1 : i }) })),
+      needs: this.needList.map(label => { const on = !!s.needs[label]; return { label, on, bg: on ? 'color-mix(in srgb,var(--color-accent) 18%,transparent)' : 'transparent', fg: on ? 'var(--color-accent-200)' : 'var(--color-text)', bd: on ? 'var(--color-accent)' : 'var(--color-divider)', toggle: () => this.setState(p => ({ needs: { ...p.needs, [label]: !p.needs[label] } })) }; }),
+      submit: this.submit, sent: s.sent, notSent: !s.sent, sentName: s.sentName,
+      resetForm: () => this.setState({ sent: false }),
+      errName: s.errs.name || '', errEmail: s.errs.email || '', errMsg: s.errs.msg || ''
+    };
+  }
+}
+</script>
+</body>
+</html>

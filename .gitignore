@@ -1,0 +1,10 @@
+# Company profile dengan gambar tertanam (4 MB) dan salinannya
+Company Profile*.html
+Smart Teknologi Kreasi website/uploads/
+
+# Arsip dan hasil paket upload (bisa dibuat ulang dari sumber)
+*.zip
+upload-hosting/
+
+# Pengaturan lokal Claude Code
+.claude/
