@@ -38,7 +38,6 @@ body.stk-cursor input,body.stk-cursor textarea{cursor:text}
         <a href="#layanan" style="color:var(--color-text)" style-hover="color:var(--color-accent)">Layanan</a>
         <a href="#karya" style="color:var(--color-text)" style-hover="color:var(--color-accent)">Karya</a>
         <a href="#proses" style="color:var(--color-text)" style-hover="color:var(--color-accent)">Proses</a>
-        <a href="#tim" style="color:var(--color-text)" style-hover="color:var(--color-accent)">Tim</a>
         <a href="#faq" style="color:var(--color-text)" style-hover="color:var(--color-accent)">FAQ</a>
         <a href="#kontak" class="btn btn-primary">Jadwalkan konsultasi</a>
       </nav>
@@ -61,7 +60,6 @@ body.stk-cursor input,body.stk-cursor textarea{cursor:text}
       <a href="#layanan" style="color:var(--color-text)">Layanan</a>
       <a href="#karya" style="color:var(--color-text)">Karya</a>
       <a href="#proses" style="color:var(--color-text)">Proses</a>
-      <a href="#tim" style="color:var(--color-text)">Tim</a>
       <a href="#faq" style="color:var(--color-text)">FAQ</a>
       <a href="#kontak">Jadwalkan konsultasi →</a>
     </nav>
@@ -280,19 +278,6 @@ body.stk-cursor input,body.stk-cursor textarea{cursor:text}
         <div><div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 55%,transparent)">Cocok untuk</div><p style="font-size:15px;line-height:24px;margin:6px 0 0;color:color-mix(in srgb,var(--color-text) 82%,transparent)">{{ m.fit }}</p></div>
         <div style="height:1px;background:linear-gradient(to right,var(--color-neutral-800),transparent)"></div>
         <div><div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 55%,transparent)">Cara biaya dihitung</div><p style="font-size:15px;line-height:24px;margin:6px 0 0;color:color-mix(in srgb,var(--color-text) 82%,transparent)">{{ m.cost }}</p></div>
-      </div>
-    </sc-for>
-  </div>
-</section>
-
-<section id="tim" data-screen-label="Tim" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px) clamp(72px,9vw,112px)">
-  <div data-reveal="1" style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent)">Tim inti</div>
-  <h2 data-reveal="1" data-delay="60" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(32px,4vw,48px);line-height:1.12;letter-spacing:-0.015em;margin:14px 0 12px;max-width:24ch">Delapan orang yang merancang, membangun, dan merawat setiap proyek</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;margin-top:40px">
-    <sc-for list="{{ team }}" as="m" hint-placeholder-count="8">
-      <div data-reveal="1" style="display:flex;align-items:center;gap:14px;padding:14px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);transition:background-color .3s,box-shadow .3s" style-hover="background-color:var(--color-surface);box-shadow:var(--shadow-md)">
-        <span style="width:48px;height:48px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--color-accent-800);color:var(--color-accent-200);font-family:var(--font-heading);font-weight:500;font-size:15px;letter-spacing:.02em">{{ m.ini }}</span>
-        <div style="min-width:0"><div style="font-family:var(--font-heading);font-weight:500;font-size:16px">{{ m.name }}</div><div style="font-size:13px;margin-top:2px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">{{ m.role }}</div></div>
       </div>
     </sc-for>
   </div>
